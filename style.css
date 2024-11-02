@@ -1,0 +1,162 @@
+/* Reset margins and paddings for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background-color: rgb(114, 114, 248);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh;
+    padding: 20px; /* Padding for small screens */
+}
+
+/* Container styles */
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 500px; /* Set a max-width for larger screens */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Todo app title */
+.todoapp {
+    font-size: 24px; /* Reduced font size for small screens */
+    font-weight: bold;
+    margin-bottom: 10px; /* Less margin below the title */
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    color: #4a90e2; /* Soft blue color */
+}
+
+.todoapp img {
+    margin-left: 10px; /* Space between title and icon */
+    width: 30px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Input field and button styles */
+.input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Space below input field */
+}
+
+.input input {
+    border-radius: 12px;
+    height: 45px; /* Increased height */
+    width: 70%;
+    padding: 0 15px; /* Increased padding */
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px; /* Increased font size */
+    transition: border 0.3s ease;
+}
+
+.input input:focus {
+    border: 1px solid #4a90e2; /* Change border color on focus */
+}
+
+.input button {
+    width: 90px; /* Adjusted button width */
+    height: 45px; /* Increased height */
+    background-color: #c92727; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 19px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.input button:hover {
+    background-color: #a41c1c;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* List items styles */
+.list-items {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-top: 10px; /* Space above list */
+}
+
+.list-items li {
+    background-color: rgb(247, 237, 237);
+    border-radius: 7px;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    width: 100%; /* Full width */
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s ease;
+}
+
+.list-items li:hover {
+    background-color: rgb(230, 230, 255);
+}
+
+li::before {
+    content: "";
+    width: 30px; /* Increased size for checkbox */
+    height: 30px;
+    border-radius: 50%;
+    background-image: url('unchecked.png');
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+}
+
+li.checked {
+    text-decoration: line-through;
+    color: #bbb; /* Gray color for completed tasks */
+}
+
+li.checked::before {
+    background-image: url('checked.png');
+}
+
+li span {
+    margin-left: auto;
+    cursor: pointer;
+    color: #c92727;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+li span:hover {
+    color: #a41c1c;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .todoapp {
+        font-size: 20px; /* Decrease title font size */
+    }
+
+    .input input {
+        font-size: 14px; /* Smaller input font */
+    }
+
+    .input button {
+        font-size: 14px; /* Smaller button font */
+    }
+
+    .list-items li {
+        font-size: 14px; /* Smaller list item font */
+    }
+}
